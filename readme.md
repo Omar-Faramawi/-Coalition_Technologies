@@ -1,6 +1,6 @@
 ## Installation 
 
-1- Clone or download the repo. 
-2- change directory to the project folder
-3- run composer install
-4- run php artisan serve
+- Clone or download the repo. 
+- change directory to the project folder.
+- run composer install.
+- run php artisan serve.
