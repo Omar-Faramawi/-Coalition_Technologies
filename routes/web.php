@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'ProductsController@index',
+	'as' => 'products'
+]);
+
+Route::post('/products/create', [
+	'uses' => 'ProductsController@create',
+	'as' => 'addProduct'
+]);
+
+Route::get('/products/all', [
+	'uses' => 'ProductsController@all',
+	'as' => 'allProducts'
+]);
