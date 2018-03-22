@@ -24,12 +24,9 @@ class ProductsController extends Controller
     	$products = Storage::get('products/products.json');
 
     	$products = json_decode($products);
-    	// dd($products->data);
-    	// rsort($products->data);
     	$lastObject = $products->data[count($products->data) - 1];
     	unset($products->data[count($products->data) - 1]);
     	$totalValue = intval(trim(explode(":", $lastObject->totalNumberValue)[1]));
-    	// dd($products->data);
     	if(count($products->data) == 0){
     		$products->data = array();
     	}
@@ -55,9 +52,7 @@ class ProductsController extends Controller
 
     	array_push($products->data, $newProduct2);
     	$products->data = array_values($products->data);
-    	// dd($products);
     	$json = json_encode($products);
-    	// dd($json);
 
     	Storage::put('products/products.json', $json);
 
@@ -70,9 +65,6 @@ class ProductsController extends Controller
     public function all(Request $request)
     {
     	$products = Storage::get('products/products.json');
-    	// $array = json_decode($products);
-    	// // dd($array);
-    	// rsort($array->data);
     	return $products;
     }
 }
